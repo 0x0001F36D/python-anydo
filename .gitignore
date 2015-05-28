@@ -38,3 +38,6 @@ nosetests.xml
 !.pylint.rc
 !.travis.yml
 *~
+
+# virtualenv
+venv/*
