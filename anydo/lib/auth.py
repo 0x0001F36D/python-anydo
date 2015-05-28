@@ -9,7 +9,7 @@ class AnyDoSession(object):
     def __init__(self, username=None, password=None):
         self.session = requests.session()
         AnyDoSession.post(self,
-                          url='https://sm-prod.any.do/j_spring_security_check',
+                          url='https://sm-prod2.any.do/j_spring_security_check',
                           data={'j_username': username, 'j_password': password,
                                 '_spring_security_remember_me': 'on'},
                           headers={'content-type':
