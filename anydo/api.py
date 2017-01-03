@@ -3,8 +3,8 @@
 from anydo.lib.bind import AnyDoAPIBinder
 from anydo.lib.utils import create_uuid
 from anydo.error import AnyDoAPIError
+import datetime
 import time
-
 
 class AnyDoAPI(object):
     """ Base class that all AnyDo API client"""
@@ -205,6 +205,15 @@ class AnyDoAPI(object):
                     Code(420): JSON Decoding Error.
                     Code(422): Invalid Operation
         """
+	# Check if datetime object was passed instead of a string
+	if type( due_day ) == datetime.datetime:
+	  # Convert into POSIX timestamp
+	  dueDate = time.mktime( due_day.timetuple() )
+	  # Need to multiply by 1000 before posting it to any.do
+	  dueDate = int( dueDate ) * 1000
+	else:
+	  dueDate = { 'someday': None, 'today': 0 }[ due_day ]
+
         try:
             ret = self.api.create_task(task_title,
                                        listPositionByCategory=0,
@@ -215,10 +224,9 @@ class AnyDoAPI(object):
                                        shared="false",
                                        priority="Normal",
                                        creationDate=int(time.time()),
+				       dueDate=dueDate,
                                        taskExpanded=False,
                                        categoryId=self.__default_category_id(),
-                                       dueDate={'someday': None,
-                                                'today': 0}[due_day],
                                        id=create_uuid())
             return ret.json()
         except ValueError:
