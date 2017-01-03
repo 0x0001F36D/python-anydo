@@ -98,7 +98,7 @@ def bind_method(**config):
 
 class AnyDoAPIBinder(AnyDoSession):
     """ Binder of AnyDoSession class """
-    host = "https://sm-prod.any.do"
+    host = "https://sm-prod2.any.do"
 
     def __init__(self, username, password):
         super(AnyDoAPIBinder, self).__init__(username=username,
