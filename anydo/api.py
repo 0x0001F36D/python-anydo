@@ -6,6 +6,7 @@ from anydo.error import AnyDoAPIError
 import datetime
 import time
 
+
 class AnyDoAPI(object):
     """ Base class that all AnyDo API client"""
     def __init__(self, username=None, password=None):
@@ -205,14 +206,11 @@ class AnyDoAPI(object):
                     Code(420): JSON Decoding Error.
                     Code(422): Invalid Operation
         """
-	# Check if datetime object was passed instead of a string
-	if type( due_day ) == datetime.datetime:
-	  # Convert into POSIX timestamp
-	  dueDate = time.mktime( due_day.timetuple() )
-	  # Need to multiply by 1000 before posting it to any.do
-	  dueDate = int( dueDate ) * 1000
-	else:
-	  dueDate = { 'someday': None, 'today': 0 }[ due_day ]
+        if type(due_day) == datetime.datetime:
+            due_date = time.mktime(due_day.timetuple())
+            due_date = int(due_date) * 1000
+        else:
+            due_date = {'someday': None, 'today': 0}[due_day]
 
         try:
             ret = self.api.create_task(task_title,
@@ -224,7 +222,7 @@ class AnyDoAPI(object):
                                        shared="false",
                                        priority="Normal",
                                        creationDate=int(time.time()),
-				       dueDate=dueDate,
+                                       dueDate=due_date,
                                        taskExpanded=False,
                                        categoryId=self.__default_category_id(),
                                        id=create_uuid())
