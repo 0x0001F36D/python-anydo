@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """ anydo.lib.tests.test_lib """
 import unittest
-from httpretty import HTTPretty, httprettified
 import time
+from httpretty import HTTPretty, httprettified
 from anydo.lib.bind import AnyDoAPIBinder
 from anydo.lib import settings
 from anydo.lib import utils

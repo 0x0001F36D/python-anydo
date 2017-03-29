@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """ anydo.lib.bind """
+import re
+import json
 from anydo.lib.utils import encode_string
 from anydo.lib.error import AnyDoAPIBinderError
 from anydo.lib.auth import AnyDoSession
-import re
-import json
 PATH_TEMPLATE = re.compile(r"{\w+}")  # #To support {variable} in paths
 
 

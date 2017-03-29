@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """ anydo.api """
+import datetime
+import time
 from anydo.lib.bind import AnyDoAPIBinder
 from anydo.lib.utils import create_uuid
 from anydo.error import AnyDoAPIError
-import datetime
-import time
 
 
 class AnyDoAPI(object):
