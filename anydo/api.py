@@ -191,12 +191,12 @@ class AnyDoAPI(object):
         except ValueError:
             raise AnyDoAPIError(420, "JSON Decoding Error")
 
-    def create_new_task(self, task_title, due_day='someday'):
+    def create_new_task(self, task_title, due_day: datetime.datetime=None):
         """ Create a new task
 
             Args:
                 task_title: string of task title
-                due_day: 'someday' in default
+                due_day: due date for task, if not set, assume 'someday'
 
             Returns:
                 A dictionary of task
@@ -206,11 +206,10 @@ class AnyDoAPI(object):
                     Code(420): JSON Decoding Error.
                     Code(422): Invalid Operation
         """
-        if type(due_day) == datetime.datetime:
+        due_date = None  # like setting 'someday'
+        if due_day:
             due_date = time.mktime(due_day.timetuple())
             due_date = int(due_date) * 1000
-        else:
-            due_date = {'someday': None, 'today': 0}[due_day]
 
         try:
             ret = self.api.create_task(task_title,
