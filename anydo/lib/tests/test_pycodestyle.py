@@ -16,12 +16,12 @@
 
   original source from: ('https://bitbucket.org/tk0miya/blockdiag'
                          '/src/0789c102744c92767f0f0efb87b1b297741bb04c'
-                         '/src/blockdiag/tests/test_pep8.py')
+                         '/src/blockdiag/tests/test_pycodestyle.py')
 """
 import unittest
 import os
 import sys
-import pep8
+import pycodestyle
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(CURRENT_DIR)
 sys.path.append(CURRENT_DIR)
@@ -30,16 +30,16 @@ sys.path.append(CURRENT_DIR)
 class Pep8Tests(unittest.TestCase):
     """ Unit test Pep8 """
 
-    def test_pep8(self):  # pylint: disable=no-self-use
+    def test_pycodestyle(self):  # pylint: disable=no-self-use
         """ runner """
         arglist = [['statistics', True],
                    ['show-source', True],
                    ['repeat', True],
                    ['paths', [BASE_DIR]]]
 
-        pep8style = pep8.StyleGuide(arglist,
-                                    parse_argv=False,
-                                    config_file=True)
+        pep8style = pycodestyle.StyleGuide(arglist,
+                                           parse_argv=False,
+                                           config_file='pycodestyle')
         options = pep8style.options
         report = pep8style.check_files()
         if options.statistics:
