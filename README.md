@@ -1,12 +1,12 @@
-> :warning: **This repository is not maintained anymore. <br/>If you would like to volunteer as a maintainer, please contact the authors**
+>  **Only supports python3.3+**
 
 python-anydo
 ============
 
 Unofficial python bindings for Any.Do, an attractive todo list organizer.
 
-[![Build Status](https://travis-ci.org/gvkalra/python-anydo.png?branch=master)](https://travis-ci.org/gvkalra/python-anydo)
-[![Coverage Status](https://coveralls.io/repos/gvkalra/python-anydo/badge.png?branch=master)](https://coveralls.io/r/gvkalra/python-anydo?branch=master)
+[![Build Status](https://travis-ci.org/dustinbrown/python-anydo.png?branch=master)](https://travis-ci.org/dustinbrown/python-anydo)
+[![Coverage Status](https://coveralls.io/repos/dustinbrown/python-anydo/badge.png?branch=master)](https://coveralls.io/r/dustinbrown/python-anydo?branch=master)
 
 The bindings cooperate with the official applications available viz:
 
@@ -67,7 +67,7 @@ Developing python-anydo
 You should add bin/runtest.sh as pre-commit git-hook.
 It will help you in verifying your changes locally.
 ```bash
-$ git clone https://github.com/gvkalra/python-anydo.git
+$ git clone https://github.com/dustinbrown/python-anydo.git
 $ cd python-anydo
 $ cp bin/runtest.sh .git/hooks/pre-commit
 ```
@@ -102,3 +102,4 @@ Authors
 -----------------
 - Gaurav Kalra (<gvkalra@gmail.com>)
 - Kouhei Maeda (<mkouhei@gmail.com>)
+- Dustin Brown (<dustinjamesbrown@gmail.com>)
