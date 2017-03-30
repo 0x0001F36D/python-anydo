@@ -11,8 +11,7 @@ def encode_string(value):
     :param value: utf-8 encoded string or unicode
     """
     if sys.version_info < (3, 0):
-        return value.encode('utf-8') \
-            if isinstance(value, unicode) else str(value)
+        return value.encode('utf-8')
     else:
         return value
 

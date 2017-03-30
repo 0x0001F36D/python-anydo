@@ -12,7 +12,7 @@ def bind_method(**config):
     """
     Binds Any.Do REST API to AnyDoAPIBinder()
     """
-    class AnyDoAPIBinderMethod(object):
+    class AnyDoAPIBinderMethod(object):  # pylint: disable=too-few-public-methods
         """ Method class for AnyDoAPIBinder """
         path = config['path']
         method = config['method']

@@ -18,7 +18,6 @@
                          '/src/0789c102744c92767f0f0efb87b1b297741bb04c'
                          '/src/blockdiag/tests/test_pep8.py')
 """
-from __future__ import print_function
 import unittest
 import os
 import sys
@@ -31,7 +30,7 @@ sys.path.append(CURRENT_DIR)
 class Pep8Tests(unittest.TestCase):
     """ Unit test Pep8 """
 
-    def test_pep8(self):
+    def test_pep8(self):  # pylint: disable=no-self-use
         """ runner """
         arglist = [['statistics', True],
                    ['show-source', True],
