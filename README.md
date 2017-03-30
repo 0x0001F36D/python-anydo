@@ -6,7 +6,7 @@ python-anydo
 Unofficial python bindings for Any.Do, an attractive todo list organizer.
 
 [![Build Status](https://travis-ci.org/dustinbrown/python-anydo.png?branch=master)](https://travis-ci.org/dustinbrown/python-anydo)
-[![Coverage Status](https://coveralls.io/repos/dustinbrown/python-anydo/badge.png?branch=master)](https://coveralls.io/r/dustinbrown/python-anydo?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/dustinbrown/python-anydo/badge.svg?branch=master)](https://coveralls.io/github/dustinbrown/python-anydo?branch=master)
 
 The bindings cooperate with the official applications available viz:
 
