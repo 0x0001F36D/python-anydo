@@ -44,6 +44,6 @@ setup(name="python-anydo",
       classifiers=classifiers,
       packages=find_packages(),
       keywords="anydo",
-      tests_require=['tox', 'httpretty', 'pycodestyle'],
+      tests_require=['tox-travis', 'httpretty', 'pycodestyle'],
       cmdclass={'test': Tox},
       zip_safe=True)
